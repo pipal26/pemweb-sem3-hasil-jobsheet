@@ -1,0 +1,14 @@
+[
+    {
+        "id_penyewa": "CUST-001",
+        "nama": "Bambang Pamungkas",
+        "no_hp": "081234567890",
+        "jaminan": "KTP"
+    },
+    {
+        "id_penyewa": "CUST-002",
+        "nama": "Siti Nurhaliza",
+        "no_hp": "089876543210",
+        "jaminan": "SIM C"
+    }
+]

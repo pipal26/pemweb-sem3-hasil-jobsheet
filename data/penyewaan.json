@@ -1,0 +1,18 @@
+[
+    {
+        "id_transaksi": "TRX-001",
+        "nama_penyewa": "Bambang Pamungkas",
+        "alat_disewa": "Tenda Dome 4 Orang",
+        "durasi": "2 Hari",
+        "tanggal_kembali": "2023-11-20",
+        "status": "Sedang Disewa"
+    },
+    {
+        "id_transaksi": "TRX-002",
+        "nama_penyewa": "Siti Nurhaliza",
+        "alat_disewa": "Carrier Eiger 60L",
+        "durasi": "3 Hari",
+        "tanggal_kembali": "2023-11-18",
+        "status": "Dikembalikan"
+    }
+]

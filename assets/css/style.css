@@ -1,0 +1,41 @@
+/* Background utama halaman (Soft Peach) */
+body {
+    background-color: #fff5f2; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/* Tema Navbar (Pink Salmon) */
+.custom-navbar {
+    background-color: #ff9a9e; 
+}
+.custom-navbar .nav-link:hover {
+    color: #ffe4e1 !important;
+}
+/* Tema Header (Peach Puff) */
+.custom-header {
+    background-color: #ffdac1; 
+    color: #d16565;
+    border: 2px dashed #ffb7b2;
+}
+/* Kustomisasi Card Bootstrap */
+.custom-card {
+    background-color: #fff;
+    border: 1px solid #ffe4e1;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.custom-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(255, 154, 158, 0.3);
+}
+/* Tombol Kustom (Peach ke Pink) */
+.custom-btn {
+    background-color: #ffb7b2;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 20px;
+}
+.custom-btn:hover {
+    background-color: #ff9a9e;
+    color: white;
+}
