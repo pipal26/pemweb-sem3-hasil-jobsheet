@@ -1,41 +1,63 @@
-/* Background utama halaman (Soft Peach) */
+:root {
+    --navy: #102a43;
+    --navy-deep: #071c2c;
+    --teal: #087e8b;
+    --coral: #f25f5c;
+    --cream: #fffaf2;
+    --ink: #183b56;
+}
+
+/* Background utama halaman */
 body {
-    background-color: #fff5f2; 
+    background: linear-gradient(135deg, #fffaf2 0%, #e6f4f1 52%, #d7e9f2 100%);
+    background-attachment: fixed;
+    color: var(--ink);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-/* Tema Navbar (Pink Salmon) */
+
+/* Tema Navbar */
 .custom-navbar {
-    background-color: #ff9a9e; 
+    background: linear-gradient(110deg, var(--navy-deep), var(--navy) 52%, var(--teal));
 }
 .custom-navbar .nav-link:hover {
-    color: #ffe4e1 !important;
+    color: #ffd166 !important;
 }
-/* Tema Header (Peach Puff) */
+
+/* Tema Header */
 .custom-header {
-    background-color: #ffdac1; 
-    color: #d16565;
-    border: 2px dashed #ffb7b2;
+    background: linear-gradient(120deg, var(--navy), var(--teal));
+    color: #ffffff;
+    border: 0;
+    box-shadow: 0 10px 24px rgba(16, 42, 67, 0.2);
 }
+
 /* Kustomisasi Card Bootstrap */
 .custom-card {
-    background-color: #fff;
-    border: 1px solid #ffe4e1;
-    border-radius: 15px;
+    background: linear-gradient(145deg, #ffffff, var(--cream));
+    border: 1px solid #b8d8d3;
+    border-radius: 12px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .custom-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(255, 154, 158, 0.3);
+    box-shadow: 0 10px 20px rgba(8, 126, 139, 0.28);
 }
-/* Tombol Kustom (Peach ke Pink) */
+
+/* Tombol Kustom */
 .custom-btn {
-    background-color: #ffb7b2;
+    background: linear-gradient(110deg, var(--coral), #d94b69);
     color: white;
     border: none;
-    border-radius: 20px;
+    border-radius: 8px;
     padding: 5px 20px;
+    font-weight: 600;
+    box-shadow: 0 5px 12px rgba(242, 95, 92, 0.25);
 }
 .custom-btn:hover {
-    background-color: #ff9a9e;
+    background: linear-gradient(110deg, #d94b69, var(--coral));
     color: white;
+}
+
+.modal-content {
+    border: 2px solid var(--teal) !important;
 }
