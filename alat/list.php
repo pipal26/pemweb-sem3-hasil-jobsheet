@@ -1,5 +1,5 @@
 <?php
-require_once '../config/database.php';
+require_once __DIR__ . '/../config/database.php';
 $stmt = $pdo->query("SELECT * FROM alat ORDER BY id ASC");
 $daftar_alat = $stmt->fetchAll();
 ?>

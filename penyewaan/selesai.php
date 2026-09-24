@@ -1,5 +1,5 @@
 <?php
-require_once '../config/database.php';
+require_once __DIR__ . '/../config/database.php';
 $penyewa = $pdo->query("SELECT id, nama FROM penyewa ORDER BY nama ASC")->fetchAll();
 $alat    = $pdo->query("SELECT id, nama_alat, harga_sewa, stok FROM alat WHERE stok > 0 ORDER BY nama_alat ASC")->fetchAll();
 

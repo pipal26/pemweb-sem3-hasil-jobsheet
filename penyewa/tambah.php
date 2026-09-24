@@ -1,5 +1,5 @@
 <?php
-require_once '../config/database.php';
+require_once __DIR__ . '/../config/database.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt = $pdo->prepare("INSERT INTO penyewa (nama, no_telp, alamat) VALUES (:n, :t, :a)");
     $stmt->execute([

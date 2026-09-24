@@ -1,5 +1,5 @@
 <?php
-require_once '../config/database.php';
+require_once __DIR__ . '/../config/database.php';
 $sql = "SELECT py.*, p.nama AS nama_penyewa, a.nama_alat 
         FROM penyewaan py
         JOIN penyewa p ON py.id_penyewa = p.id
