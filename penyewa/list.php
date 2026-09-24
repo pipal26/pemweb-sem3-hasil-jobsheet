@@ -16,7 +16,7 @@ $daftar_penyewa = $stmt->fetchAll();
     <!-- Navbar -->
     <header class="bg-slate-900 border-b border-slate-800 shadow-md">
         <div class="max-w-7xl mx-auto px-6 py-4 flex flex-wrap justify-between items-center">
-            <a href="../index.php" class="text-xl font-bold tracking-wide text-white hover:text-blue-400 transition">SewaAlat Studio</a>
+            <a href="../index.php" class="text-xl font-bold tracking-wide text-white hover:text-blue-400 transition">SewaAlat Camping</a>
             <nav class="flex space-x-3 mt-2 sm:mt-0">
                 <a href="../alat/list.php" class="px-4 py-2 text-sm font-medium rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition">Data Alat</a>
                 <a href="list.php" class="px-4 py-2 text-sm font-medium rounded-lg text-white bg-slate-800">Data Penyewa</a>
