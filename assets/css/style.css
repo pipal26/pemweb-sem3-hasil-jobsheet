@@ -1,63 +1,15 @@
-:root {
-    --navy: #102a43;
-    --navy-deep: #071c2c;
-    --teal: #087e8b;
-    --coral: #f25f5c;
-    --cream: #fffaf2;
-    --ink: #183b56;
-}
-
-/* Background utama halaman */
-body {
-    background: linear-gradient(135deg, #fffaf2 0%, #e6f4f1 52%, #d7e9f2 100%);
-    background-attachment: fixed;
-    color: var(--ink);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-/* Tema Navbar */
-.custom-navbar {
-    background: linear-gradient(110deg, var(--navy-deep), var(--navy) 52%, var(--teal));
-}
-.custom-navbar .nav-link:hover {
-    color: #ffd166 !important;
-}
-
-/* Tema Header */
-.custom-header {
-    background: linear-gradient(120deg, var(--navy), var(--teal));
-    color: #ffffff;
-    border: 0;
-    box-shadow: 0 10px 24px rgba(16, 42, 67, 0.2);
-}
-
-/* Kustomisasi Card Bootstrap */
-.custom-card {
-    background: linear-gradient(145deg, #ffffff, var(--cream));
-    border: 1px solid #b8d8d3;
-    border-radius: 12px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.custom-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(8, 126, 139, 0.28);
-}
-
-/* Tombol Kustom */
-.custom-btn {
-    background: linear-gradient(110deg, var(--coral), #d94b69);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    padding: 5px 20px;
-    font-weight: 600;
-    box-shadow: 0 5px 12px rgba(242, 95, 92, 0.25);
-}
-.custom-btn:hover {
-    background: linear-gradient(110deg, #d94b69, var(--coral));
-    color: white;
-}
-
-.modal-content {
-    border: 2px solid var(--teal) !important;
-}
+* { box-sizing: border-box; font-family: sans-serif; }
+body { margin: 0; padding: 24px; background: #f4f6f9; color: #333; }
+.container { max-width: 900px; margin: 0 auto; background: #fff; padding: 24px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+header nav { margin-bottom: 20px; display: flex; gap: 12px; border-bottom: 1px solid #ddd; padding-bottom: 12px; }
+header nav a { text-decoration: none; color: #0066cc; font-weight: bold; }
+table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+th, td { padding: 10px; border-bottom: 1px solid #ddd; text-align: left; }
+th { background: #f8fafc; }
+.btn { padding: 6px 12px; border-radius: 4px; text-decoration: none; display: inline-block; cursor: pointer; border: none; font-size: 14px; }
+.btn-primary { background: #0066cc; color: #fff; }
+.btn-danger { background: #dc3545; color: #fff; }
+.btn-success { background: #28a745; color: #fff; }
+.form-group { margin-bottom: 14px; }
+label { display: block; margin-bottom: 6px; font-weight: 500; }
+input, select, textarea { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
