@@ -6,8 +6,8 @@ ini_set('display_errors', 1);
 require_once __DIR__ . '/../config/database.php';
 
 // Ambil list penyewa & alat
-$penyewa = $pdo->query("SELECT id, nama FROM penyewa ORDER BY nama ASC")->fetchAll();
-$alat    = $pdo->query("SELECT id, nama_alat, harga_sewa, stok FROM alat ORDER BY nama_alat ASC")->fetchAll();
+$penyewa = $conn->query("SELECT id, nama FROM penyewa ORDER BY nama ASC")->fetchAll();
+$alat    = $conn->query("SELECT id, nama_alat, harga_sewa, stok FROM alat ORDER BY nama_alat ASC")->fetchAll();
 
 $pesan_error = '';
 
@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($id_penyewa > 0 && $id_alat > 0 && $durasi_hari > 0) {
         try {
             // 1. Ambil harga sewa dan stok alat secara sederhana (tanpa FOR UPDATE agar tidak di-lock pooler Neon)
-            $stmtAlat = $pdo->prepare("SELECT harga_sewa, stok FROM alat WHERE id = ?");
+            $stmtAlat = $conn->prepare("SELECT harga_sewa, stok FROM alat WHERE id = ?");
             $stmtAlat->execute([$id_alat]);
             $dataAlat = $stmtAlat->fetch();
 
@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $sqlInsert = "INSERT INTO penyewaan (id_penyewa, id_alat, tgl_sewa, tgl_kembali, durasi_hari, total_biaya, status) 
                           VALUES (?, ?, ?, ?, ?, ?, 'SEWA') RETURNING id";
             
-            $stmtInsert = $pdo->prepare($sqlInsert);
+            $stmtInsert = $conn->prepare($sqlInsert);
             $stmtInsert->execute([
                 $id_penyewa,
                 $id_alat,
@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             // 3. Update stok alat jika ada stok
             if ($dataAlat['stok'] > 0) {
-                $stmtUpdate = $pdo->prepare("UPDATE alat SET stok = stok - 1 WHERE id = ?");
+                $stmtUpdate = $conn->prepare("UPDATE alat SET stok = stok - 1 WHERE id = ?");
                 $stmtUpdate->execute([$id_alat]);
             }
 

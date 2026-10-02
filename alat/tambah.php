@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/../config/database.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $stmt = $pdo->prepare("INSERT INTO alat (nama_alat, kategori, harga_sewa, stok) VALUES (:n, :k, :h, :s)");
+    $stmt = $conn->prepare("INSERT INTO alat (nama_alat, kategori, harga_sewa, stok) VALUES (:n, :k, :h, :s)");
     $stmt->execute([
         ':n' => trim($_POST['nama_alat']),
         ':k' => trim($_POST['kategori']),
