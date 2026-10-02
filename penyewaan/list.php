@@ -31,7 +31,7 @@ try {
 // 3. Ambil data alat & penyewa untuk join manual
 $penyewaMap = [];
 try {
-    $pRows = $pdo->query("SELECT * FROM penyewa")->fetchAll(PDO::FETCH_ASSOC);
+    $pRows = $conn->query("SELECT * FROM penyewa")->fetchAll(PDO::FETCH_ASSOC);
     foreach ($pRows as $p) {
         $pId = $p['id'] ?? reset($p);
         $penyewaMap[$pId] = $p['nama'] ?? 'Tanpa Nama';
@@ -40,7 +40,7 @@ try {
 
 $alatMap = [];
 try {
-    $aRows = $pdo->query("SELECT * FROM alat")->fetchAll(PDO::FETCH_ASSOC);
+    $aRows = $conn->query("SELECT * FROM alat")->fetchAll(PDO::FETCH_ASSOC);
     foreach ($aRows as $a) {
         $aId = $a['id'] ?? reset($a);
         $alatMap[$aId] = $a['nama_alat'] ?? 'Tanpa Nama';
