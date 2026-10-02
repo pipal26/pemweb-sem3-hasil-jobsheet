@@ -1,5 +1,11 @@
 <?php
 require_once __DIR__ . '/../config/database.php';
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: ../login.php"); 
+    exit();
+}
+
 $stmt = $pdo->query("SELECT * FROM penyewa ORDER BY id ASC");
 $daftar_penyewa = $stmt->fetchAll();
 ?>

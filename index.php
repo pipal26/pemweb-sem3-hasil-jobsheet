@@ -1,6 +1,11 @@
 <?php
 require_once __DIR__ . '/config/database.php';
 
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php"); 
+    exit();
+}
+
 $keyword = trim($_GET['q'] ?? '');
 $hasilAlat = [];
 $hasilPenyewa = [];
@@ -58,7 +63,6 @@ if ($keyword !== '') {
     </style>
 </head>
 <body class="min-h-screen text-slate-800 flex flex-col font-sans relative">
-
     <!-- Slider Gambar Pemandangan -->
     <div class="bg-slide active" style="background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80');"></div>
     <div class="bg-slide" style="background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1920&q=80');"></div>
@@ -67,13 +71,18 @@ if ($keyword !== '') {
 
     <!-- Navbar -->
     <header class="bg-slate-900/90 backdrop-blur border-b border-slate-800 sticky top-0 z-30 shadow-md">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex flex-wrap justify-between items-center">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex flex-wrap justify-between items-center gap-3">
             <a href="index.php" class="text-xl font-bold tracking-wide text-white hover:text-emerald-400 transition">🏕️ SewaAlat Camping</a>
-            <nav class="flex space-x-3 mt-2 sm:mt-0">
-                <a href="alat/list.php" class="px-4 py-2 text-sm font-medium rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition">Data Alat</a>
-                <a href="penyewa/list.php" class="px-4 py-2 text-sm font-medium rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition">Data Penyewa</a>
-                <a href="penyewaan/list.php" class="px-4 py-2 text-sm font-medium rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition">Transaksi Rental</a>
+            <nav class="mt-2 flex w-full flex-wrap gap-1 sm:mt-0 sm:w-auto">
+                <a href="alat/list.php" class="rounded-lg px-3 py-2 text-sm font-medium text-slate-300 transition hover:bg-slate-800 hover:text-white">Data Alat</a>
+                <a href="penyewa/list.php" class="rounded-lg px-3 py-2 text-sm font-medium text-slate-300 transition hover:bg-slate-800 hover:text-white">Data Penyewa</a>
+                <a href="penyewaan/list.php" class="rounded-lg px-3 py-2 text-sm font-medium text-slate-300 transition hover:bg-slate-800 hover:text-white">Transaksi Rental</a>
             </nav>
+            <div class="flex w-full flex-wrap items-center justify-between gap-2 rounded-lg border border-slate-700 bg-slate-800/80 px-3 py-2 text-sm text-slate-200 sm:w-auto sm:justify-start">
+                <span class="min-w-0 truncate">Halo, <strong class="text-white"><?= htmlspecialchars($_SESSION['username']); ?></strong></span>
+                <a href="changepassword.php" class="font-medium text-emerald-300 transition hover:text-emerald-200">Ubah password</a>
+                <a href="logout.php" class="rounded-md bg-rose-600 px-3 py-1.5 font-semibold text-white transition hover:bg-rose-700">Logout</a>
+            </div>
         </div>
     </header>
 
