@@ -15,17 +15,17 @@ if ($keyword !== '') {
     $searchTerm = "%$keyword%";
     
     // 1. Cari Alat (Case-Insensitive di PostgreSQL menggunakan ILIKE)
-    $qAlat = $pdo->prepare("SELECT * FROM alat WHERE nama_alat ILIKE :q OR kategori ILIKE :q ORDER BY id DESC");
+    $qAlat = $conn->prepare("SELECT * FROM alat WHERE nama_alat ILIKE :q OR kategori ILIKE :q ORDER BY id DESC");
     $qAlat->execute([':q' => $searchTerm]);
     $hasilAlat = $qAlat->fetchAll();
 
     // 2. Cari Penyewa (Kolom yang benar: nama, no_telp, alamat)
-    $qPenyewa = $pdo->prepare("SELECT * FROM penyewa WHERE nama ILIKE :q OR no_telp ILIKE :q OR alamat ILIKE :q ORDER BY id DESC");
+    $qPenyewa = $conn->prepare("SELECT * FROM penyewa WHERE nama ILIKE :q OR no_telp ILIKE :q OR alamat ILIKE :q ORDER BY id DESC");
     $qPenyewa->execute([':q' => $searchTerm]);
     $hasilPenyewa = $qPenyewa->fetchAll();
 
     // 3. Cari Transaksi Rental
-    $qSewa = $pdo->prepare("
+    $qSewa = $conn->prepare("
         SELECT py.*, p.nama AS nama_penyewa, a.nama_alat 
         FROM penyewaan py
         JOIN penyewa p ON py.id_penyewa = p.id
