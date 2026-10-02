@@ -2,7 +2,7 @@
 require_once __DIR__ . '/../config/database.php';
 
 // 1. Cek semua tabel yang ada di database PostgreSQL
-$tabelDB = $pdo->query("
+$tabelDB = $conn->query("
     SELECT table_name 
     FROM information_schema.tables 
     WHERE table_schema = 'public'
