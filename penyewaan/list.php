@@ -14,11 +14,11 @@ $rawTransaksi = [];
 $kolomTabel = [];
 
 try {
-    $stmt = $pdo->query("SELECT * FROM penyewaan");
+    $stmt = $conn->query("SELECT * FROM penyewaan");
     $rawTransaksi = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     // Ambil nama-nama kolom tabel penyewaan yang ada di DB
-    $stmtCol = $pdo->query("
+    $stmtCol = $conn->query("
         SELECT column_name, data_type 
         FROM information_schema.columns 
         WHERE table_name = 'penyewaan'

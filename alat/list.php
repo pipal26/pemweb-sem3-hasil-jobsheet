@@ -6,7 +6,7 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-$stmt = $pdo->query("SELECT * FROM alat ORDER BY id ASC");
+$stmt = $conn->query("SELECT * FROM alat ORDER BY id ASC");
 $daftar_alat = $stmt->fetchAll();
 ?>
 <!DOCTYPE html>

@@ -6,7 +6,7 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-$stmt = $pdo->query("SELECT * FROM penyewa ORDER BY id ASC");
+$stmt = $conn->query("SELECT * FROM penyewa ORDER BY id ASC");
 $daftar_penyewa = $stmt->fetchAll();
 ?>
 <!DOCTYPE html>
